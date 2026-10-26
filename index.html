@@ -1,0 +1,774 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cost Accounting Mastery | Section 3 Quiz</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/inter@4.5.0/index.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/cairo@4.5.0/index.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;background:#0a0e1a;color:#e2e8f0;min-height:100vh}
+.bg-mesh{position:fixed;inset:0;background:radial-gradient(ellipse at 20% 30%,rgba(59,130,246,.12) 0%,transparent 50%),radial-gradient(ellipse at 80% 70%,rgba(139,92,246,.1) 0%,transparent 50%),radial-gradient(ellipse at 50% 50%,rgba(251,191,36,.06) 0%,transparent 50%);pointer-events:none;z-index:0}
+.glass{background:rgba(255,255,255,.04);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.08)}
+.glass-strong{background:rgba(255,255,255,.07);backdrop-filter:blur(30px);-webkit-backdrop-filter:blur(30px);border:1px solid rgba(255,255,255,.12)}
+.gt-gold{background:linear-gradient(135deg,#fbbf24,#f59e0b,#d97706);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.gt-blue{background:linear-gradient(135deg,#60a5fa,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.gt-purple{background:linear-gradient(135deg,#a78bfa,#8b5cf6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.gt-green{background:linear-gradient(135deg,#34d399,#10b981);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.btn{transition:all .3s cubic-bezier(.4,0,.2,1);font-weight:600;cursor:pointer;border:none;outline:none;display:inline-flex;align-items:center;justify-content:center;gap:8px}
+.btn:active{transform:scale(.97)}
+.btn-primary{background:linear-gradient(135deg,#3b82f6,#2563eb);color:#fff}
+.btn-primary:hover{box-shadow:0 10px 40px rgba(59,130,246,.4);transform:translateY(-2px)}
+.btn-gold{background:linear-gradient(135deg,#fbbf24,#f59e0b);color:#1a1a2e}
+.btn-gold:hover{box-shadow:0 10px 40px rgba(251,191,36,.4);transform:translateY(-2px)}
+.btn-purple{background:linear-gradient(135deg,#8b5cf6,#7c3aed);color:#fff}
+.btn-purple:hover{box-shadow:0 10px 40px rgba(139,92,246,.4);transform:translateY(-2px)}
+.btn-green{background:linear-gradient(135deg,#10b981,#059669);color:#fff}
+.btn-green:hover{box-shadow:0 10px 40px rgba(16,185,129,.4);transform:translateY(-2px)}
+.btn-outline{background:transparent;border:1px solid rgba(255,255,255,.2);color:#e2e8f0}
+.btn-outline:hover{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.3)}
+.btn-toggle{background:linear-gradient(135deg,#8b5cf6,#7c3aed);color:#fff;transition:all .3s}
+.btn-toggle:hover{box-shadow:0 0 25px rgba(139,92,246,.5);transform:translateY(-2px)}
+.btn-toggle.active{background:linear-gradient(135deg,#10b981,#059669);box-shadow:0 0 25px rgba(16,185,129,.4)}
+.option-btn{transition:all .3s cubic-bezier(.4,0,.2,1);cursor:pointer}
+.option-btn:hover:not(.disabled){transform:translateX(-4px);border-color:rgba(59,130,246,.5);background:rgba(59,130,246,.08)}
+.option-btn.selected{border-color:#3b82f6!important;background:rgba(59,130,246,.15)!important;box-shadow:0 0 20px rgba(59,130,246,.2)!important}
+.option-btn.correct{border-color:#10b981!important;background:rgba(16,185,129,.15)!important;box-shadow:0 0 25px rgba(16,185,129,.35)!important}
+.option-btn.wrong{border-color:#ef4444!important;background:rgba(239,68,68,.15)!important;box-shadow:0 0 25px rgba(239,68,68,.35)!important}
+.option-btn.disabled{pointer-events:none;opacity:.85}
+@keyframes fadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes scaleIn{from{opacity:0;transform:scale(.9)}to{opacity:1;transform:scale(1)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.fade-in{animation:fadeIn .5s ease forwards}
+.scale-in{animation:scaleIn .4s ease forwards}
+.explanation-box{animation:fadeIn .4s ease forwards}
+.translation-visible{animation:fadeIn .3s ease forwards}
+::-webkit-scrollbar{width:6px;height:6px}
+::-webkit-scrollbar-track{background:rgba(255,255,255,.02)}
+::-webkit-scrollbar-thumb{background:rgba(255,255,255,.1);border-radius:3px}
+.stopwatch{font-variant-numeric:tabular-nums;letter-spacing:.05em}
+.sticky-header{position:sticky;top:0;z-index:50;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);background:rgba(10,14,26,.9);border-bottom:1px solid rgba(255,255,255,.08)}
+.question-card{transition:all .3s}
+.question-card.answered-correct{border-left:4px solid #10b981}
+.question-card.answered-wrong{border-left:4px solid #ef4444}
+.category-divider{position:sticky;top:72px;z-index:40;scroll-margin-top:80px}
+.stat-card{transition:all .3s}
+.stat-card:hover{transform:translateY(-4px)}
+.filter-btn{transition:all .3s;cursor:pointer}
+.filter-btn:hover{transform:translateY(-2px)}
+.filter-btn.active{box-shadow:0 0 25px rgba(59,130,246,.4);transform:translateY(-2px)}
+.hidden-q{display:none!important}
+.modal-overlay{position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;padding:20px;background:rgba(0,0,0,.8);backdrop-filter:blur(10px)}
+.modal-overlay.hidden{display:none}
+.modal-content{max-width:900px;width:100%;max-height:90vh;overflow-y:auto;animation:scaleIn .4s ease}
+.concept-card{transition:all .3s}
+.concept-card:hover{transform:translateY(-4px);box-shadow:0 10px 40px rgba(59,130,246,.2)}
+.bilingual-q{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:start;transition:all .3s}
+@media(max-width:768px){.bilingual-q{grid-template-columns:1fr;}}
+.bilingual-en{color:#f1f5f9;font-weight:600;font-size:1rem;line-height:1.6}
+.bilingual-ar{color:#c4b5fd;font-size:.9rem;line-height:1.7;padding:12px 16px;background:rgba(139,92,246,.08);border-radius:12px;border-right:3px solid #8b5cf6;transition:all .3s}
+.option-bilingual{display:flex;flex-direction:column;gap:4px}
+.option-en{color:#f1f5f9;font-weight:500;font-size:.9rem}
+.option-ar{color:#a78bfa;font-size:.8rem;padding-top:4px;border-top:1px dashed rgba(139,92,246,.2);transition:all .3s}
+.formula-box{background:rgba(59,130,246,.08);border-left:3px solid #3b82f6;padding:10px 14px;border-radius:8px;font-family:'Courier New',monospace;font-size:.85rem;color:#93c5fd;margin:8px 0}
+</style>
+</head>
+<body>
+<div class="bg-mesh"></div>
+
+<!-- ========== KEY CONCEPTS MODAL ========== -->
+<div id="conceptsModal" class="modal-overlay hidden">
+<div class="modal-content glass-strong rounded-3xl p-8">
+<div class="flex items-center justify-between mb-6">
+<h2 class="text-3xl font-black gt-gold"><i class="fas fa-book-open mr-2"></i>Key Concepts Review</h2>
+<button id="closeModalBtn" class="btn btn-outline px-4 py-2 rounded-xl"><i class="fas fa-times"></i></button>
+</div>
+<div class="space-y-4">
+<div class="concept-card glass rounded-2xl p-5 border-l-4 border-blue-500">
+<h3 class="font-bold text-blue-300 text-lg mb-2"><i class="fas fa-layer-group mr-2"></i>Manufacturing vs Non-Manufacturing Costs</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm mt-2">
+<div class="text-slate-300"><strong class="text-blue-300">Manufacturing (Product):</strong> DM + DL + MOH (Direct & Indirect). Inventoriable costs.</div>
+<div class="text-slate-300"><strong class="text-red-300">Non-Manufacturing (Period):</strong> Selling + Administrative expenses. Expensed immediately.</div>
+</div>
+</div>
+<div class="concept-card glass rounded-2xl p-5 border-l-4 border-purple-500">
+<h3 class="font-bold text-purple-300 text-lg mb-2"><i class="fas fa-chart-line mr-2"></i>Cost Behavior Classifications</h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-sm mt-2">
+<div class="text-slate-300"><strong class="text-blue-300">Variable Cost:</strong> Total changes with activity; per unit constant (e.g., DM, DL)</div>
+<div class="text-slate-300"><strong class="text-amber-300">Fixed Cost:</strong> Total constant within relevant range; per unit decreases as activity increases (e.g., Rent)</div>
+<div class="text-slate-300"><strong class="text-purple-300">Mixed Cost:</strong> Contains both fixed and variable elements (Y = a + bX)</div>
+</div>
+</div>
+<div class="concept-card glass rounded-2xl p-5 border-l-4 border-amber-500">
+<h3 class="font-bold text-amber-300 text-lg mb-2"><i class="fas fa-calculator mr-2"></i>High-Low Method Formulas</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm mt-2">
+<div class="formula-box">b = (High Cost - Low Cost) / (High Activity - Low Activity)</div>
+<div class="formula-box">a = High Cost - (b × High Activity)</div>
+<div class="formula-box">Y = a + bX</div>
+</div>
+</div>
+<div class="concept-card glass rounded-2xl p-5 border-l-4 border-green-500">
+<h3 class="font-bold text-green-300 text-lg mb-2"><i class="fas fa-industry mr-2"></i>MOH Classification Note</h3>
+<p class="text-slate-300 text-sm">MOH can be Fixed OR Variable depending on nature:</p>
+<ul class="list-disc list-inside text-slate-300 text-sm mt-2 space-y-1">
+<li><strong>Fixed MOH:</strong> Factory Rent, Supervisor Salary, Depreciation</li>
+<li><strong>Variable MOH:</strong> Indirect Materials, Indirect Labor, Electricity</li>
+</ul>
+</div>
+</div>
+<div class="mt-6 text-center">
+<button id="gotItBtn" class="btn btn-primary px-8 py-3 rounded-xl text-lg"><i class="fas fa-check"></i> Got it, Close</button>
+</div>
+</div>
+</div>
+
+<!-- ========== WELCOME SCREEN ========== -->
+<div id="welcomeScreen" class="min-h-screen flex flex-col items-center justify-center p-4 relative z-10">
+<div class="text-center max-w-5xl mx-auto">
+<div class="mb-8 scale-in">
+<div class="w-28 h-28 mx-auto mb-6 rounded-3xl bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-5xl shadow-2xl" style="animation:float 3s ease infinite">
+<i class="fas fa-layer-group text-white"></i>
+</div>
+<h1 class="text-5xl md:text-7xl font-black mb-3 gt-gold">Cost Classification</h1>
+<h2 class="text-2xl md:text-3xl text-slate-300 mb-2 font-bold">Section 3 Mastery Quiz</h2>
+<p class="text-slate-400 text-lg">Cost Accounting ACC311</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+<div class="glass-strong rounded-2xl p-5 text-center stat-card">
+<div class="w-12 h-12 mx-auto mb-2 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center"><i class="fas fa-list-check text-white text-xl"></i></div>
+<div class="text-3xl font-black gt-blue">20</div>
+<div class="text-xs text-slate-400 mt-1">MCQ Questions</div>
+</div>
+<div class="glass-strong rounded-2xl p-5 text-center stat-card">
+<div class="w-12 h-12 mx-auto mb-2 rounded-xl bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center"><i class="fas fa-file-lines text-white text-xl"></i></div>
+<div class="text-3xl font-black gt-purple">10</div>
+<div class="text-xs text-slate-400 mt-1">Scenario Based</div>
+</div>
+<div class="glass-strong rounded-2xl p-5 text-center stat-card">
+<div class="w-12 h-12 mx-auto mb-2 rounded-xl bg-gradient-to-br from-amber-500 to-amber-600 flex items-center justify-center"><i class="fas fa-layer-group text-white text-xl"></i></div>
+<div class="text-3xl font-black gt-gold">10</div>
+<div class="text-xs text-slate-400 mt-1">Classification</div>
+</div>
+<div class="glass-strong rounded-2xl p-5 text-center stat-card">
+<div class="w-12 h-12 mx-auto mb-2 rounded-xl bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center"><i class="fas fa-check-double text-white text-xl"></i></div>
+<div class="text-3xl font-black gt-green">5</div>
+<div class="text-xs text-slate-400 mt-1">True / False</div>
+</div>
+</div>
+<div class="glass-strong rounded-3xl p-6 mb-8">
+<h3 class="text-xl font-bold gt-gold mb-4"><i class="fas fa-star mr-2"></i>Features</h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+<div class="flex items-center gap-3 text-slate-300"><i class="fas fa-book-open text-blue-400 text-xl"></i><span>Key Concepts Review</span></div>
+<div class="flex items-center gap-3 text-slate-300"><i class="fas fa-language text-purple-400 text-xl"></i><span>Bilingual Display (EN + AR)</span></div>
+<div class="flex items-center gap-3 text-slate-300"><i class="fas fa-filter text-amber-400 text-xl"></i><span>Category Filters</span></div>
+<div class="flex items-center gap-3 text-slate-300"><i class="fas fa-stopwatch text-green-400 text-xl"></i><span>Stopwatch Timer</span></div>
+<div class="flex items-center gap-3 text-slate-300"><i class="fas fa-file-word text-blue-400 text-xl"></i><span>Export to Word</span></div>
+<div class="flex items-center gap-3 text-slate-300"><i class="fas fa-chart-line text-purple-400 text-xl"></i><span>Performance Analytics</span></div>
+</div>
+</div>
+<div>
+<label class="block text-slate-400 text-sm mb-2">Your Name</label>
+<input id="playerName" type="text" placeholder="Enter your name..." class="w-full max-w-md mx-auto block glass-strong rounded-xl px-5 py-3 text-center text-white outline-none focus:border-blue-500 transition mb-6" />
+<div class="flex flex-wrap justify-center gap-3">
+<button id="reviewConceptsBtn" class="btn btn-gold text-lg px-8 py-4 rounded-2xl"><i class="fas fa-book-open"></i> Review Key Concepts</button>
+<button id="startQuizBtn" class="btn btn-primary text-lg px-12 py-4 rounded-2xl"><i class="fas fa-play"></i> Start Quiz</button>
+</div>
+</div>
+</div>
+</div>
+
+<!-- ========== QUIZ SCREEN ========== -->
+<div id="quizScreen" class="hidden relative z-10">
+<div class="sticky-header">
+<div class="max-w-5xl mx-auto px-4 py-3">
+<div class="flex items-center justify-between flex-wrap gap-3">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center"><i class="fas fa-layer-group text-white"></i></div>
+<div><div class="font-bold text-white text-sm">Cost Classification Quiz</div><div class="text-xs text-slate-400" id="headerPlayerName">Learner</div></div>
+</div>
+<div class="flex items-center gap-3 flex-wrap">
+<button id="globalTranslationToggle" class="btn btn-toggle px-4 py-2 rounded-xl text-sm">
+<i class="fas fa-language"></i>
+<span id="translationToggleText">Hide Translation</span>
+</button>
+<div class="glass rounded-xl px-4 py-2 flex items-center gap-2"><i class="fas fa-stopwatch text-blue-400"></i><span id="stopwatchDisplay" class="stopwatch font-bold text-blue-400">00:00</span></div>
+<div class="glass rounded-xl px-4 py-2 flex items-center gap-2"><i class="fas fa-star text-amber-400"></i><span id="scoreDisplay" class="font-bold text-amber-400">0</span><span class="text-slate-500 text-sm">/ <span id="totalQuestions">45</span></span></div>
+</div>
+</div>
+<div class="w-full bg-slate-800/50 rounded-full h-1.5 overflow-hidden mt-3">
+<div id="progressBar" class="h-full rounded-full bg-gradient-to-r from-blue-500 via-purple-500 to-amber-500 transition-all duration-500" style="width:0%"></div>
+</div>
+<div class="flex justify-between text-xs text-slate-500 mt-1">
+<span id="answeredCount">0 answered</span>
+<span id="progressPercent">0%</span>
+</div>
+</div>
+</div>
+
+<div class="max-w-5xl mx-auto px-4 pt-4">
+<div class="glass-strong rounded-2xl p-4">
+<div class="flex items-center justify-between mb-3 flex-wrap gap-2">
+<h3 class="font-bold text-slate-300 text-sm"><i class="fas fa-filter mr-2 text-blue-400"></i>Quick Filter</h3>
+<span class="text-xs text-slate-500">Click to jump to category</span>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-5 gap-2">
+<button data-filter="all" class="filter-btn active glass rounded-xl p-3 text-center"><div class="flex items-center justify-center gap-2 mb-1"><i class="fas fa-grip text-white"></i><span class="font-bold text-white text-sm">All</span></div><div class="text-xs text-slate-400">45 Questions</div></button>
+<button data-filter="mcq" class="filter-btn glass rounded-xl p-3 text-center"><div class="flex items-center justify-center gap-2 mb-1"><i class="fas fa-list-check text-blue-400"></i><span class="font-bold text-blue-300 text-sm">MCQ</span></div><div class="text-xs text-slate-400">20 Questions</div></button>
+<button data-filter="scenario" class="filter-btn glass rounded-xl p-3 text-center"><div class="flex items-center justify-center gap-2 mb-1"><i class="fas fa-file-lines text-purple-400"></i><span class="font-bold text-purple-300 text-sm">Scenario</span></div><div class="text-xs text-slate-400">10 Questions</div></button>
+<button data-filter="classification" class="filter-btn glass rounded-xl p-3 text-center"><div class="flex items-center justify-center gap-2 mb-1"><i class="fas fa-layer-group text-amber-400"></i><span class="font-bold text-amber-300 text-sm">Classify</span></div><div class="text-xs text-slate-400">10 Questions</div></button>
+<button data-filter="truefalse" class="filter-btn glass rounded-xl p-3 text-center"><div class="flex items-center justify-center gap-2 mb-1"><i class="fas fa-check-double text-green-400"></i><span class="font-bold text-green-300 text-sm">T / F</span></div><div class="text-xs text-slate-400">5 Questions</div></button>
+</div>
+</div>
+</div>
+
+<div class="max-w-5xl mx-auto px-4 py-6">
+<div id="questionsContainer" class="space-y-6"></div>
+<div class="mt-10 mb-8 glass-strong rounded-3xl p-6">
+<div class="text-center mb-6">
+<h3 class="text-2xl font-black gt-gold mb-2">Ready to Submit?</h3>
+<p class="text-slate-400 text-sm">Review your answers or submit to see your results</p>
+</div>
+<div class="flex flex-wrap justify-center gap-3">
+<button id="exportWordBtn1" class="btn btn-green px-6 py-3 rounded-xl"><i class="fas fa-file-word"></i> Export to Word</button>
+<button id="submitQuizBtn" class="btn btn-primary px-8 py-3 rounded-xl"><i class="fas fa-flag-checkered"></i> Submit & See Results</button>
+<button id="restartBtn1" class="btn btn-outline px-6 py-3 rounded-xl"><i class="fas fa-redo"></i> Restart</button>
+</div>
+</div>
+</div>
+</div>
+
+<!-- ========== RESULTS SCREEN ========== -->
+<div id="resultsScreen" class="hidden min-h-screen relative z-10 py-8">
+<div class="max-w-4xl mx-auto px-4">
+<div class="glass-strong rounded-3xl p-8 text-center mb-6 scale-in">
+<div class="w-24 h-24 mx-auto mb-4 rounded-3xl bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center text-5xl shadow-2xl"><i class="fas fa-trophy text-white"></i></div>
+<h2 class="text-4xl font-black gt-gold mb-2">Final Results</h2>
+<p class="text-slate-400 mb-6" id="resultPlayerName"></p>
+<div class="text-7xl font-black mb-2"><span id="finalScore" class="gt-gold">0</span><span class="text-slate-500 text-3xl">/ <span id="totalPossible">45</span></span></div>
+<div class="text-2xl text-slate-300 mb-2"><span id="percentage">0</span>%</div>
+<div id="gradeBadge" class="inline-block text-lg px-6 py-2 mt-2 rounded-full font-bold text-white"></div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
+<div class="glass rounded-2xl p-4 text-center stat-card"><i class="fas fa-check-circle text-green-400 text-2xl mb-2"></i><div id="correctCount" class="text-3xl font-black text-green-400">0</div><div class="text-xs text-slate-400">Correct</div></div>
+<div class="glass rounded-2xl p-4 text-center stat-card"><i class="fas fa-times-circle text-red-400 text-2xl mb-2"></i><div id="wrongCount" class="text-3xl font-black text-red-400">0</div><div class="text-xs text-slate-400">Wrong</div></div>
+<div class="glass rounded-2xl p-4 text-center stat-card"><i class="fas fa-clock text-blue-400 text-2xl mb-2"></i><div id="totalTime" class="text-3xl font-black text-blue-400">0:00</div><div class="text-xs text-slate-400">Total Time</div></div>
+<div class="glass rounded-2xl p-4 text-center stat-card"><i class="fas fa-bolt text-amber-400 text-2xl mb-2"></i><div id="avgTime" class="text-3xl font-black text-amber-400">0s</div><div class="text-xs text-slate-400">Avg / Question</div></div>
+</div>
+<div class="glass-strong rounded-3xl p-6 mb-6">
+<h3 class="text-xl font-bold gt-blue mb-4"><i class="fas fa-chart-bar mr-2"></i>Performance by Category</h3>
+<div id="categoryBreakdown" class="space-y-4"></div>
+</div>
+<div class="glass-strong rounded-3xl p-6 mb-6">
+<h3 class="text-xl font-bold gt-gold mb-4"><i class="fas fa-medal mr-2"></i>Achievement Badges</h3>
+<div id="badgesContainer" class="flex flex-wrap gap-3 justify-center"></div>
+</div>
+<div class="text-center">
+<button id="exportWordBtn2" class="btn btn-green px-6 py-3 rounded-xl mr-2"><i class="fas fa-file-word"></i> Export to Word</button>
+<button id="reviewAnswersBtn" class="btn btn-outline px-6 py-3 rounded-xl mr-2"><i class="fas fa-search"></i> Review Answers</button>
+<button id="restartBtn2" class="btn btn-primary px-8 py-3 rounded-xl"><i class="fas fa-redo"></i> Restart Quiz</button>
+</div>
+</div>
+</div>
+
+<!-- ========== REVIEW SCREEN ========== -->
+<div id="reviewScreen" class="hidden min-h-screen relative z-10 py-8">
+<div class="max-w-5xl mx-auto px-4">
+<div class="glass-strong rounded-2xl p-4 mb-4 flex items-center justify-between flex-wrap gap-2">
+<h2 class="text-xl font-bold gt-gold"><i class="fas fa-search mr-2"></i>Review Answers</h2>
+<div class="flex gap-2">
+<button id="exportWordBtn3" class="btn btn-green px-4 py-2 rounded-xl text-sm"><i class="fas fa-file-word"></i> Word</button>
+<button id="backToResultsBtn" class="btn btn-outline px-4 py-2 rounded-xl text-sm"><i class="fas fa-arrow-left"></i> Back</button>
+</div>
+</div>
+<div id="reviewContainer" class="space-y-4"></div>
+<div class="text-center mt-6 mb-8">
+<button id="backToResultsBtn2" class="btn btn-primary px-8 py-3 rounded-xl"><i class="fas fa-arrow-left"></i> Back to Results</button>
+</div>
+</div>
+</div>
+
+<script>
+(function(){
+'use strict';
+
+const allQuestions = {
+mcq: [
+{en:"Which of the following is classified as a Manufacturing Overhead cost?",ar:"أي مما يلي يُصنف كتكلفة أعباء تصنيع؟",options:[{en:"Direct materials used in production",ar:"المواد المباشرة المستخدمة في الإنتاج"},{en:"Wages of assembly-line workers",ar:"أجور عمال خط التجميع"},{en:"Factory supervisor's salary",ar:"راتب مشرف المصنع"},{en:"Sales commissions",ar:"عمولات المبيعات"}],correct:2,explanation:{en:"Factory supervisor's salary is an indirect manufacturing cost = Manufacturing Overhead. Direct materials and assembly wages are direct costs. Sales commissions are selling expenses.",ar:"راتب مشرف المصنع هو تكلفة تصنيع غير مباشرة = أعباء تصنيع. المواد المباشرة وأجور التجميع تكاليف مباشرة. عمولات المبيعات مصروفات بيع."}},
+{en:"A variable cost per unit:",ar:"التكلفة المتغيرة للوحدة:",options:[{en:"Increases as activity level increases",ar:"تزداد مع زيادة مستوى النشاط"},{en:"Remains constant regardless of activity level",ar:"تبقى ثابتة بغض النظر عن مستوى النشاط"},{en:"Decreases as activity level increases",ar:"تنخفض مع زيادة مستوى النشاط"},{en:"Is zero at zero activity",ar:"هي صفر عند عدم النشاط"}],correct:1,explanation:{en:"Variable cost PER UNIT remains constant. Total variable cost changes with activity level.",ar:"التكلفة المتغيرة لكل وحدة تبقى ثابتة. إجمالي التكلفة المتغيرة يتغير مع مستوى النشاط."}},
+{en:"A fixed cost in total:",ar:"التكلفة الثابتة في الإجمالي:",options:[{en:"Changes proportionally with activity level",ar:"تتغير تناسبياً مع مستوى النشاط"},{en:"Remains constant within the relevant range",ar:"تبقى ثابتة ضمن النطاق ذي الصلة"},{en:"Decreases as activity increases",ar:"تنخفض مع زيادة النشاط"},{en:"Is always zero",ar:"دائماً صفر"}],correct:1,explanation:{en:"Total fixed cost remains constant within the relevant range regardless of activity level.",ar:"إجمالي التكلفة الثابتة يبقى ثابتاً ضمن النطاق ذي الصلة بغض النظر عن مستوى النشاط."}},
+{en:"The High-Low method formula for variable cost per unit (b) is:",ar:"صيغة طريقة الأعلى والأدنى للتكلفة المتغيرة للوحدة (b) هي:",options:[{en:"(High Cost + Low Cost) / (High Activity + Low Activity)",ar:"(التكلفة العالية + المنخفضة) / (النشاط العالي + المنخفض)"},{en:"(High Cost - Low Cost) / (High Activity - Low Activity)",ar:"(التكلفة العالية - المنخفضة) / (النشاط العالي - المنخفض)"},{en:"High Cost / High Activity",ar:"التكلفة العالية / النشاط العالي"},{en:"Low Cost / Low Activity",ar:"التكلفة المنخفضة / النشاط المنخفض"}],correct:1,explanation:{en:"b = (Highest Activity Cost - Lowest Activity Cost) / (Highest Activity Units - Lowest Activity Units)",ar:"b = (تكلفة أعلى نشاط - تكلفة أدنى نشاط) / (وحدات أعلى نشاط - وحدات أدنى نشاط)"}},
+{en:"Which cost is ALWAYS a period cost under both absorption and variable costing?",ar:"أي تكلفة هي دائماً تكلفة فترة تحت كلتا الطريقتين؟",options:[{en:"Direct materials",ar:"مواد مباشرة"},{en:"Factory rent",ar:"إيجار المصنع"},{en:"Advertising expense",ar:"مصروف الإعلان"},{en:"Assembly line wages",ar:"أجور خط التجميع"}],correct:2,explanation:{en:"Advertising is a selling expense = Period Cost under both methods. DM, factory rent, and assembly wages are product/manufacturing costs.",ar:"الإعلان هو مصروف بيع = تكلفة فترة تحت كلتا الطريقتين. المواد المباشرة وإيجار المصنع وأجور التجميع تكاليف منتج/تصنيع."}},
+{en:"Prime Costs equal:",ar:"التكاليف الأولية تساوي:",options:[{en:"DM + DL + MOH",ar:"مواد مباشرة + عمالة مباشرة + أعباء"},{en:"DL + MOH",ar:"عمالة مباشرة + أعباء"},{en:"DM + DL",ar:"مواد مباشرة + عمالة مباشرة"},{en:"DM + MOH",ar:"مواد مباشرة + أعباء"}],correct:2,explanation:{en:"Prime Costs = Direct Materials + Direct Labor.",ar:"التكاليف الأولية = المواد المباشرة + العمالة المباشرة."}},
+{en:"Conversion Costs equal:",ar:"تكاليف التحويل تساوي:",options:[{en:"DM + DL",ar:"مواد مباشرة + عمالة مباشرة"},{en:"DL + MOH",ar:"عمالة مباشرة + أعباء"},{en:"DM + MOH",ar:"مواد مباشرة + أعباء"},{en:"DM + DL + MOH",ar:"مواد مباشرة + عمالة مباشرة + أعباء"}],correct:1,explanation:{en:"Conversion Costs = Direct Labor + Manufacturing Overhead.",ar:"تكاليف التحويل = العمالة المباشرة + أعباء التصنيع."}},
+{en:"A mixed cost is best described as:",ar:"التكلفة المختلطة تُوصف بأنها:",options:[{en:"Purely variable",ar:"متغيرة بحتة"},{en:"Purely fixed",ar:"ثابتة بحتة"},{en:"Contains both fixed and variable components",ar:"تحتوي على مكونات ثابتة ومتغيرة"},{en:"Only exists in service companies",ar:"توجد فقط في شركات الخدمات"}],correct:2,explanation:{en:"Mixed Cost = Fixed component + Variable component. Example: utility bills with base charge + usage charge.",ar:"التكلفة المختلطة = مكون ثابت + مكون متغير. مثال: فواتير المرافق مع رسوم أساسية + رسوم استخدام."}},
+{en:"In the equation Y = a + bX, 'a' represents:",ar:"في المعادلة Y = a + bX، يمثل 'a':",options:[{en:"Variable cost per unit",ar:"التكلفة المتغيرة للوحدة"},{en:"Total fixed cost",ar:"إجمالي التكلفة الثابتة"},{en:"Level of activity",ar:"مستوى النشاط"},{en:"Total mixed cost",ar:"إجمالي التكلفة المختلطة"}],correct:1,explanation:{en:"In Y = a + bX: Y = total mixed cost, a = total fixed cost, b = variable cost per unit, X = activity level.",ar:"في Y = a + bX: Y = إجمالي التكلفة المختلطة، a = إجمالي التكلفة الثابتة، b = التكلفة المتغيرة للوحدة، X = مستوى النشاط."}},
+{en:"Which of the following is a Direct Cost?",ar:"أي مما يلي يُعد تكلفة مباشرة؟",options:[{en:"Factory supervisor salary",ar:"راتب مشرف المصنع"},{en:"Plant depreciation",ar:"إهلاك المصنع"},{en:"Steel used to make BMW X5 cars",ar:"الفولاذ المستخدم لصنع سيارات BMW X5"},{en:"Factory electricity",ar:"كهرباء المصنع"}],correct:2,explanation:{en:"Steel for BMW X5 can be easily traced to specific cars = Direct Cost using cost tracing.",ar:"يمكن تتبع الفولاذ لسيارات BMW X5 بسهولة = تكلفة مباشرة باستخدام تتبع التكلفة."}},
+{en:"Cost allocation is used for:",ar:"يُستخدم توزيع التكلفة لـ:",options:[{en:"Assigning direct costs",ar:"تعيين التكاليف المباشرة"},{en:"Assigning indirect costs to cost objects",ar:"تعيين التكاليف غير المباشرة لمواضيع التكلفة"},{en:"Calculating profit margin",ar:"حساب هامش الربح"},{en:"Determining selling price",ar:"تحديد سعر البيع"}],correct:1,explanation:{en:"Cost allocation describes the assignment of INDIRECT costs to a particular cost object.",ar:"توزيع التكلفة يصف تعيين التكاليف غير المباشرة لموضوع تكلفة معين."}},
+{en:"Cost tracing is used for:",ar:"يُستخدم تتبع التكلفة لـ:",options:[{en:"Assigning indirect costs",ar:"تعيين التكاليف غير المباشرة"},{en:"Assigning direct costs to cost objects",ar:"تعيين التكاليف المباشرة لمواضيع التكلفة"},{en:"Calculating break-even point",ar:"حساب نقطة التعادل"},{en:"Preparing financial statements",ar:"إعداد القوائم المالية"}],correct:1,explanation:{en:"Cost tracing describes the assignment of DIRECT costs to a particular cost object.",ar:"تتبع التكلفة يصف تعيين التكاليف المباشرة لموضوع تكلفة معين."}},
+{en:"Espresso Express: Fixed weekly expense $1,200, variable cost $0.22/cup. At 2,000 cups/week, average cost per cup is:",ar:"إسبريسو إكسبريس: مصروف أسبوعي ثابت 1,200$، تكلفة متغيرة 0.22$/كوب. عند 2,000 كوب/أسبوع، متوسط التكلفة للكوب هو:",options:[{en:"$0.22",ar:"0.22$"},{en:"$0.60",ar:"0.60$"},{en:"$0.82",ar:"0.82$"},{en:"$1.20",ar:"1.20$"}],correct:2,explanation:{en:"Total cost = $1,200 + (2,000 × $0.22) = $1,640. Average = $1,640 / 2,000 = $0.82.",ar:"إجمالي التكلفة = 1,200$ + (2,000 × 0.22$) = 1,640$. المتوسط = 1,640$ / 2,000 = 0.82$."}},
+{en:"As activity level increases, fixed cost per unit:",ar:"مع زيادة مستوى النشاط، التكلفة الثابتة للوحدة:",options:[{en:"Increases",ar:"تزداد"},{en:"Remains constant",ar:"تبقى ثابتة"},{en:"Decreases",ar:"تنخفض"},{en:"Becomes zero",ar:"تصبح صفراً"}],correct:2,explanation:{en:"Fixed cost per unit DECREASES as activity increases because the same total fixed cost is spread over more units.",ar:"التكلفة الثابتة للوحدة تنخفض مع زيادة النشاط لأن نفس إجمالي التكلفة الثابتة يُوزع على وحدات أكثر."}},
+{en:"Rooks Corporation: Which of these is a Period Cost?",ar:"شركة روكس: أي من هذه تكاليف فترة؟",options:[{en:"Direct materials",ar:"مواد مباشرة"},{en:"Factory insurance",ar:"تأمين المصنع"},{en:"Depreciation on salespersons' cars",ar:"إهلاك سيارات رجال المبيعات"},{en:"Indirect labor",ar:"عمالة غير مباشرة"}],correct:2,explanation:{en:"Depreciation on salespersons' cars is a selling expense = Period Cost. Others are manufacturing/product costs.",ar:"إهلاك سيارات رجال المبيعات هو مصروف بيع = تكلفة فترة. الأخرى تكاليف تصنيع/منتج."}},
+{en:"Which cost behaves as BOTH a product cost AND a period cost depending on classification?",ar:"أي تكلفة تتصرف كـ تكلفة منتج وتكلفة فترة حسب التصنيف؟",options:[{en:"Direct materials",ar:"مواد مباشرة"},{en:"None - they are mutually exclusive categories",ar:"لا شيء - إنها فئات متبادلة الاستبعاد"},{en:"Factory utilities",ar:"مرافق المصنع"},{en:"Office supplies",ar:"مستلزمات المكتب"}],correct:1,explanation:{en:"A cost cannot be both product and period simultaneously. These are mutually exclusive classifications.",ar:"لا يمكن أن تكون التكلفة منتجاً وفترة في نفس الوقت. هذه تصنيفات متبادلة الاستبعاد."}},
+{en:"Pearson Company: At 8,000 units, total overhead is $32,000 including $12,000 fixed. At 9,000 units, expected total overhead is:",ar:"شركة بيرسون: عند 8,000 وحدة، إجمالي الأعباء 32,000$ منها 12,000$ ثابتة. عند 9,000 وحدة، إجمالي الأعباء المتوقع هو:",options:[{en:"$32,000",ar:"32,000$"},{en:"$34,500",ar:"34,500$"},{en:"$36,000",ar:"36,000$"},{en:"$40,000",ar:"40,000$"}],correct:1,explanation:{en:"Variable OH = $32,000 - $12,000 = $20,000 at 8,000 units = $2.50/unit. At 9,000: $12,000 + (9,000 × $2.50) = $12,000 + $22,500 = $34,500.",ar:"أعباء متغيرة = 32,000$ - 12,000$ = 20,000$ عند 8,000 وحدة = 2.50$/وحدة. عند 9,000: 12,000$ + (9,000 × 2.50$) = 34,500$."}},
+{en:"Iuliano Corp inspection costs: High=949 units/$16,600, Low=859 units/$15,760. Variable cost per unit is:",ar:"تكاليف فحص شركة إيوليانو: أعلى=949 وحدة/16,600$، أدنى=859 وحدة/15,760$. التكلفة المتغيرة للوحدة هي:",options:[{en:"$8.40",ar:"8.40$"},{en:"$9.33",ar:"9.33$"},{en:"$10.50",ar:"10.50$"},{en:"$12.00",ar:"12.00$"}],correct:1,explanation:{en:"b = ($16,600 - $15,760) / (949 - 859) = $840 / 90 = $9.33/unit.",ar:"b = (16,600$ - 15,760$) / (949 - 859) = 840$ / 90 = 9.33$/وحدة."}},
+{en:"Using the Iuliano data above, the estimated fixed inspection cost per month is:",ar:"باستخدام بيانات إيوليانو أعلاه، التكلفة الثابتة المقدرة للفحص شهرياً هي:",options:[{en:"$7,746",ar:"7,746$"},{en:"$8,854",ar:"8,854$"},{en:"$9,330",ar:"9,330$"},{en:"$16,600",ar:"16,600$"}],correct:0,explanation:{en:"a = $16,600 - ($9.33 × 949) = $16,600 - $8,854 = $7,746.",ar:"a = 16,600$ - (9.33$ × 949) = 16,600$ - 8,854$ = 7,746$."}},
+{en:"Which statement about MOH is correct?",ar:"أي عبارة عن أعباء التصنيع صحيحة؟",options:[{en:"MOH is always fixed",ar:"الأعباء دائماً ثابتة"},{en:"MOH is always variable",ar:"الأعباء دائماً متغيرة"},{en:"MOH can be fixed or variable depending on nature",ar:"الأعباء يمكن أن تكون ثابتة أو متغيرة حسب الطبيعة"},{en:"MOH is never a product cost",ar:"الأعباء ليست أبداً تكلفة منتج"}],correct:2,explanation:{en:"MOH depends on nature: Factory rent/supervisor salary = Fixed MOH. Indirect materials/electricity = Variable MOH.",ar:"الأعباء تعتمد على الطبيعة: إيجار المصنع/راتب المشرف = أعباء ثابتة. مواد غير مباشرة/كهرباء = أعباء متغيرة."}}
+],
+scenario: [
+{en:"A pizza factory needs flour, cheese, tomato sauce, oven electricity, kitchen rent, and chef wages. Classify each by TYPE.",ar:"مصنع بيتزا يحتاج دقيق، جبن، صلصة طماطم، كهرباء الفرن، إيجار المطبخ، وأجور الشيف. صنّف كل نوع.",scenario:"Pizza Factory Cost Types",options:[{en:"Flour/Cheese=Sauce=Labor; Electricity/Rent=Overhead",ar:"دقيق/جبن/صلصة=مواد؛ كهرباء/إيجار=أعباء"},{en:"Flour/Cheese/Sauce=Material; Chef=Labor; Electricity/Rent=Overhead",ar:"دقيق/جبن/صلصة=مواد؛ شيف=عمالة؛ كهرباء/إيجار=أعباء"},{en:"All are Material Costs",ar:"كلها تكاليف مواد"},{en:"All are Overhead Costs",ar:"كلها تكاليف أعباء"}],correct:1,explanation:{en:"Flour, cheese, tomato sauce = Material Cost. Chef wages = Labor Cost. Oven electricity, kitchen rent = Overhead Cost.",ar:"الدقيق والجبن وصلصة الطماطم = تكلفة مواد. أجور الشيف = تكلفة عمالة. كهرباء الفرن وإيجار المطبخ = تكلفة أعباء."}},
+{en:"BMW X5: Tires=$500 each (4/car), Labor=5hrs×$200/hr, Plant Manager Salary=$8,000/month shared across models. Classify by TRACEABILITY.",ar:"BMW X5: إطارات=500$ لكل إطار (4/سيارة)، عمالة=5 ساعات×200$/ساعة، راتب مدير المصنع=8,000$/شهر مشترك بين الطرازات. صنّف حسب إمكانية التتبع.",scenario:"BMW X5 Cost Traceability",options:[{en:"Tires/Labor=Direct (tracing); Manager=Indirect (allocation)",ar:"إطارات/عمالة=مباشرة (تتبع)؛ مدير=غير مباشرة (توزيع)"},{en:"All are Direct Costs",ar:"كلها تكاليف مباشرة"},{en:"All are Indirect Costs",ar:"كلها تكاليف غير مباشرة"},{en:"Tires=Indirect; Labor/Manager=Direct",ar:"إطارات=غير مباشرة؛ عمالة/مدير=مباشرة"}],correct:0,explanation:{en:"Tires and labor hours can be directly traced to BMW X5 = Direct Costs (cost tracing). Plant manager oversees many models = Indirect Cost (cost allocation).",ar:"يمكن تتبع الإطارات وساعات العمل مباشرة لـ BMW X5 = تكاليف مباشرة (تتبع التكلفة). مدير المصنع يشرف على طرازات عديدة = تكلفة غير مباشرة (توزيع التكلفة)."}},
+{en:"Northwest Hospital: Pediatric nurses' wages for pediatric dept vs. heating for entire hospital allocated to pediatric dept. Classify.",ar:"مستشفى نورث ويست: أجور ممرضات الأطفال لقسم الأطفال مقابل تدفئة المستشفى بالكامل المُوزعة على قسم الأطفال. صنّف.",scenario:"Northwest Hospital Cost Classification",options:[{en:"Both are Direct Costs",ar:"كلاهما تكاليف مباشرة"},{en:"Nurses=Direct; Heating=Indirect",ar:"ممرضات=مباشرة؛ تدفئة=غير مباشرة"},{en:"Both are Indirect Costs",ar:"كلاهما تكاليف غير مباشرة"},{en:"Nurses=Indirect; Heating=Direct",ar:"ممرضات=غير مباشرة؛ تدفئة=مباشرة"}],correct:1,explanation:{en:"Pediatric nurses' wages can be directly traced to pediatric department = Direct Cost. Hospital heating serves all departments = Indirect Cost requiring allocation.",ar:"يمكن تتبع أجور ممرضات الأطفال مباشرة لقسم الأطفال = تكلفة مباشرة. تدفئة المستشفى تخدم جميع الأقسام = تكلفة غير مباشرة تتطلب توزيعاً."}},
+{en:"Wood used for chairs=$200, Nails/Paint=$50, Labor=$100, Factory Rent/Electricity=$50. Calculate Prime Costs and Conversion Costs.",ar:"خشب للكراسي=200 جنيه، مسامير/طلاء=50 جنيه، عمالة=100 جنيه، إيجار/كهرباء المصنع=50 جنيه. احسب التكاليف الأولية وتكاليف التحويل.",scenario:"Chair Manufacturing Cost Calculations",options:[{en:"Prime=$300; Conversion=$150",ar:"أولية=300؛ تحويل=150"},{en:"Prime=$350; Conversion=$150",ar:"أولية=350؛ تحويل=150"},{en:"Prime=$300; Conversion=$200",ar:"أولية=300؛ تحويل=200"},{en:"Prime=$400; Conversion=$100",ar:"أولية=400؛ تحويل=100"}],correct:0,explanation:{en:"Prime Costs = DM + DL = $200 + $100 = $300. Conversion Costs = DL + MOH = $100 + $50 = $150.",ar:"التكاليف الأولية = مواد مباشرة + عمالة مباشرة = 200 + 100 = 300. تكاليف التحويل = عمالة مباشرة + أعباء = 100 + 50 = 150."}},
+{en:"Espresso Express: Fixed=$1,200/week, Variable=$0.22/cup. Complete table for 2,000, 2,100, 2,200 cups. What happens to average cost per cup?",ar:"إسبريسو إكسبريس: ثابت=1,200$/أسبوع، متغير=0.22$/كوب. أكمل الجدول لـ 2,000 و 2,100 و 2,200 كوب. ماذا يحدث لمتوسط التكلفة للكوب؟",scenario:"Espresso Express Cost Behavior",options:[{en:"Average cost increases",ar:"متوسط التكلفة يزداد"},{en:"Average cost remains constant",ar:"متوسط التكلفة يبقى ثابتاً"},{en:"Average cost decreases",ar:"متوسط التكلفة ينخفض"},{en:"Cannot determine",ar:"لا يمكن التحديد"}],correct:2,explanation:{en:"At 2,000: $1,640/2,000=$0.82. At 2,100: $1,662/2,100=$0.791. At 2,200: $1,684/2,200=$0.765. Average cost DECREASES because fixed cost spreads over more cups.",ar:"عند 2,000: 1,640$/2,000=0.82$. عند 2,100: 1,662$/2,100=0.791$. عند 2,200: 1,684$/2,200=0.765$. متوسط التكلفة ينخفض لأن التكلفة الثابتة تتوزع على أكواب أكثر."}},
+{en:"Rooks Corporation December costs: DM=$176,000, DL=$7,000, MOH items=$52,000+$23,000, Period costs=$92,000+$32,000+$47,000+$136,000. Total Product Costs?",ar:"تكاليف ديسمبر لشركة روكس: مواد=176,000$، عمالة=7,000$، بنود أعباء=52,000$+23,000$، تكاليف فترة=92,000$+32,000$+47,000$+136,000$. إجمالي تكاليف المنتج؟",scenario:"Rooks Corporation Product Costs",options:[{en:"$243,000",ar:"243,000$"},{en:"$307,000",ar:"307,000$"},{en:"$340,000",ar:"340,000$"},{en:"$547,000",ar:"547,000$"}],correct:2,explanation:{en:"Product Costs = DM + DL + MOH = $176,000 + $7,000 + $52,000 + $23,000 + $82,000 = $340,000.",ar:"تكاليف المنتج = مواد مباشرة + عمالة مباشرة + أعباء = 176,000$ + 7,000$ + 52,000$ + 23,000$ + 82,000$ = 340,000$."}},
+{en:"Iuliano Corp: High=949 units/$16,600, Low=859 units/$15,760. Write the complete cost function.",ar:"شركة إيوليانو: أعلى=949 وحدة/16,600$، أدنى=859 وحدة/15,760$. اكتب دالة التكلفة الكاملة.",scenario:"Iuliano Cost Function",options:[{en:"Y = $7,746 + $9.33X",ar:"Y = 7,746$ + 9.33$X"},{en:"Y = $9.33 + $7,746X",ar:"Y = 9.33$ + 7,746$X"},{en:"Y = $8,854 + $9.33X",ar:"Y = 8,854$ + 9.33$X"},{en:"Y = $16,600 + $9.33X",ar:"Y = 16,600$ + 9.33$X"}],correct:0,explanation:{en:"b = $9.33/unit, a = $7,746. Cost function: Y = $7,746 + $9.33X.",ar:"b = 9.33$/وحدة، a = 7,746$. دالة التكلفة: Y = 7,746$ + 9.33$X."}},
+{en:"General Costs: Hamburger buns at Wendy's, Advertising by dental office, Apples canned by Del Monte, Shipping apples to customers. Classify behavior AND function.",ar:"تكاليف عامة: خبز برجر في وينديز، إعلان عيادة أسنان، تفاح معلب بواسطة ديل مونتي، شحن التفاح للعملاء. صنّف السلوك والوظيفة.",scenario:"General Cost Classifications",options:[{en:"Buns=Var/Product; Ads=Fixed/Period; Apples=Var/Product; Shipping=Var/Period",ar:"خبز=متغير/منتج؛ إعلان=ثابت/فترة؛ تفاح=متغير/منتج؛ شحن=متغير/فترة"},{en:"All are Variable Costs",ar:"كلها تكاليف متغيرة"},{en:"All are Product Costs",ar:"كلها تكاليف منتج"},{en:"Buns=Fixed/Product; Ads=Variable/Period",ar:"خبز=ثابت/منتج؛ إعلان=متغير/فترة"}],correct:0,explanation:{en:"Buns=Variable/Product; Ads=Fixed/Period(Selling); Apples=Variable/Product; Shipping=Variable/Period(Selling).",ar:"خبز=متغير/منتج؛ إعلان=ثابت/فترة(بيع)؛ تفاح=متغير/منتج؛ شحن=متغير/فترة(بيع)."}},
+{en:"A company has DM=$100,000, DL=$80,000, V.MOH=$20,000, F.MOH=$50,000, Selling=$75,000, Admin=$220,000. Calculate Total Manufacturing Costs and Total Period Costs.",ar:"شركة لديها مواد=100,000$، عمالة=80,000$، أعباء متغيرة=20,000$، أعباء ثابتة=50,000$، بيع=75,000$، إدارة=220,000$. احسب إجمالي تكاليف التصنيع وإجمالي تكاليف الفترة.",scenario:"Camile Company Cost Totals",options:[{en:"Mfg=$250,000; Period=$295,000",ar:"تصنيع=250,000$؛ فترة=295,000$"},{en:"Mfg=$200,000; Period=$370,000",ar:"تصنيع=200,000$؛ فترة=370,000$"},{en:"Mfg=$250,000; Period=$370,000",ar:"تصنيع=250,000$؛ فترة=370,000$"},{en:"Mfg=$300,000; Period=$295,000",ar:"تصنيع=300,000$؛ فترة=295,000$"}],correct:0,explanation:{en:"Mfg = DM+DL+V.MOH+F.MOH = 100,000+80,000+20,000+50,000 = $250,000. Period = Selling+Admin = 75,000+220,000 = $295,000.",ar:"تصنيع = مواد+عمالة+أعباء متغيرة+أعباء ثابتة = 250,000$. فترة = بيع+إدارة = 295,000$."}},
+{en:"Water company charges $75 fixed for up to 500 gallons + $1/gallon excess. For 700 gallons usage, total cost is:",ar:"شركة المياه تفرض 75$ ثابتة حتى 500 جالون + 1$/جالون زائد. لاستخدام 700 جالون، التكلفة الإجمالية هي:",scenario:"Mixed Cost Water Bill Example",options:[{en:"$75",ar:"75$"},{en:"$275",ar:"275$"},{en:"$700",ar:"700$"},{en:"$775",ar:"775$"}],correct:1,explanation:{en:"Fixed = $75. Variable = (700-500) × $1 = $200. Total = $75 + $200 = $275.",ar:"ثابتة = 75$. متغيرة = (700-500) × 1$ = 200$. الإجمالي = 75$ + 200$ = 275$."}}
+],
+classification: [
+{en:"Classify: Wood used to produce furniture.",ar:"صنّف: الخشب المستخدم لإنتاج الأثاث.",options:[{en:"Material Cost (Direct)",ar:"تكلفة مادة (مباشرة)"},{en:"Labor Cost",ar:"تكلفة عمالة"},{en:"Overhead Cost",ar:"تكلفة أعباء"},{en:"Selling Cost",ar:"تكلفة بيع"}],correct:0,explanation:{en:"Wood is a raw material that becomes part of the finished product = Material Cost (Direct).",ar:"الخشب مادة خام تصبح جزءاً من المنتج النهائي = تكلفة مادة (مباشرة)."}},
+{en:"Classify: Wages paid to worker who makes chairs.",ar:"صنّف: الأجور المدفوعة للعامل الذي يصنع الكراسي.",options:[{en:"Material Cost",ar:"تكلفة مادة"},{en:"Labor Cost (Direct)",ar:"تكلفة عمالة (مباشرة)"},{en:"Overhead Cost",ar:"تكلفة أعباء"},{en:"Administrative Cost",ar:"تكلفة إدارية"}],correct:1,explanation:{en:"Worker wages for making chairs = Labor Cost (Direct Labor).",ar:"أجور العامل لصنع الكراسي = تكلفة عمالة (عمالة مباشرة)."}},
+{en:"Classify: Electricity used to operate factory machines.",ar:"صنّف: الكهرباء المستخدمة لتشغيل آلات المصنع.",options:[{en:"Direct Material",ar:"مادة مباشرة"},{en:"Direct Labor",ar:"عمالة مباشرة"},{en:"Overhead Cost",ar:"تكلفة أعباء"},{en:"Selling Expense",ar:"مصروف بيع"}],correct:2,explanation:{en:"Electricity for factory machines = Overhead Cost (indirect manufacturing cost).",ar:"كهرباء آلات المصنع = تكلفة أعباء (تكلفة تصنيع غير مباشرة)."}},
+{en:"Classify: Salary of factory supervisor overseeing all workers.",ar:"صنّف: راتب مشرف المصنع الذي يشرف على جميع العمال.",options:[{en:"Direct Labor",ar:"عمالة مباشرة"},{en:"Direct Material",ar:"مادة مباشرة"},{en:"Overhead Cost (Indirect)",ar:"تكلفة أعباء (غير مباشرة)"},{en:"Selling Expense",ar:"مصروف بيع"}],correct:2,explanation:{en:"Supervisor oversees all workers, cannot be traced to specific products = Overhead Cost (Indirect).",ar:"المشرف يشرف على جميع العمال، لا يمكن تتبعه لمنتجات معينة = تكلفة أعباء (غير مباشرة)."}},
+{en:"Classify: Advertising expense.",ar:"صنّف: مصروف الإعلان.",options:[{en:"Manufacturing Cost",ar:"تكلفة تصنيع"},{en:"Product Cost",ar:"تكلفة منتج"},{en:"Period Cost (Selling)",ar:"تكلفة فترة (بيع)"},{en:"Direct Cost",ar:"تكلفة مباشرة"}],correct:2,explanation:{en:"Advertising is a Selling Expense = Period Cost (non-manufacturing).",ar:"الإعلان هو مصروف بيع = تكلفة فترة (غير تصنيعية)."}},
+{en:"Classify: Depreciation on executive automobiles.",ar:"صنّف: إهلاك السيارات التنفيذية.",options:[{en:"Manufacturing Overhead",ar:"أعباء تصنيع"},{en:"Product Cost",ar:"تكلفة منتج"},{en:"Period Cost (Administrative)",ar:"تكلفة فترة (إدارية)"},{en:"Direct Labor",ar:"عمالة مباشرة"}],correct:2,explanation:{en:"Executive automobile depreciation is an Administrative Expense = Period Cost.",ar:"إهلاك السيارات التنفيذية هو مصروف إداري = تكلفة فترة."}},
+{en:"Classify: Lubricants used for machine maintenance in factory.",ar:"صنّف: مواد التشحيم المستخدمة لصيانة الآلات في المصنع.",options:[{en:"Direct Material",ar:"مادة مباشرة"},{en:"Direct Labor",ar:"عمالة مباشرة"},{en:"Manufacturing Overhead (Product Cost)",ar:"أعباء تصنيع (تكلفة منتج)"},{en:"Selling Expense",ar:"مصروف بيع"}],correct:2,explanation:{en:"Lubricants are indirect materials used in factory = Manufacturing Overhead = Product Cost.",ar:"مواد التشحيم مواد غير مباشرة تُستخدم في المصنع = أعباء تصنيع = تكلفة منتج."}},
+{en:"Classify: Soap and paper towels used by factory workers.",ar:"صنّف: الصابون والمناشف الورقية المستخدمة من قبل عمال المصنع.",options:[{en:"Direct Material",ar:"مادة مباشرة"},{en:"Direct Labor",ar:"عمالة مباشرة"},{en:"Manufacturing Overhead (Product Cost)",ar:"أعباء تصنيع (تكلفة منتج)"},{en:"Administrative Cost",ar:"تكلفة إدارية"}],correct:2,explanation:{en:"Soap and paper towels are indirect materials in factory = Manufacturing Overhead = Product Cost.",ar:"الصابون والمناشف الورقية مواد غير مباشرة في المصنع = أعباء تصنيع = تكلفة منتج."}},
+{en:"Classify: When Production > Sales, Absorption Income vs Variable Income.",ar:"صنّف: عندما يتجاوز الإنتاج المبيعات، دخل الاستيعابية مقابل المتغيرة.",options:[{en:"Absorption < Variable",ar:"استيعابية < متغيرة"},{en:"Absorption > Variable",ar:"استيعابية > متغيرة"},{en:"Absorption = Variable",ar:"استيعابية = متغيرة"},{en:"Cannot determine",ar:"لا يمكن التحديد"}],correct:1,explanation:{en:"When Production > Sales, some fixed MOH is deferred in ending inventory under absorption, making Absorption Income > Variable Income.",ar:"عندما يتجاوز الإنتاج المبيعات، يتم تأجيل بعض الأعباء الثابتة في المخزون الأخير تحت الاستيعابية، مما يجعل دخل الاستيعابية > المتغيرة."}},
+{en:"Classify: Thread used in a garment factory.",ar:"صنّف: الخيط المستخدم في مصنع ملابس.",options:[{en:"Direct Material",ar:"مادة مباشرة"},{en:"Direct Labor",ar:"عمالة مباشرة"},{en:"Manufacturing Overhead (Indirect Material)",ar:"أعباء تصنيع (مادة غير مباشرة)"},{en:"Selling Expense",ar:"مصروف بيع"}],correct:2,explanation:{en:"Thread is too small/insignificant to trace to individual garments = Indirect Material = Manufacturing Overhead.",ar:"الخيط صغير جداً/غير مهم لتتبعه للملابس الفردية = مادة غير مباشرة = أعباء تصنيع."}}
+],
+truefalse: [
+{en:"Variable cost per unit changes as activity level changes.",ar:"التكلفة المتغيرة للوحدة تتغير مع تغير مستوى النشاط.",options:[{en:"True",ar:"صحيح"},{en:"False",ar:"خطأ"}],correct:1,explanation:{en:"False! Variable cost PER UNIT remains CONSTANT. Only TOTAL variable cost changes with activity.",ar:"خطأ! التكلفة المتغيرة لكل وحدة تبقى ثابتة. فقط إجمالي التكلفة المتغيرة يتغير مع النشاط."}},
+{en:"Fixed cost per unit decreases as activity level increases.",ar:"التكلفة الثابتة للوحدة تنخفض مع زيادة مستوى النشاط.",options:[{en:"True",ar:"صحيح"},{en:"False",ar:"خطأ"}],correct:0,explanation:{en:"True! As activity increases, the same total fixed cost is spread over more units, reducing cost per unit.",ar:"صحيح! مع زيادة النشاط، نفس إجمالي التكلفة الثابتة يُوزع على وحدات أكثر، مما يقلل التكلفة للوحدة."}},
+{en:"Manufacturing Overhead is always a fixed cost.",ar:"أعباء التصنيع دائماً تكلفة ثابتة.",options:[{en:"True",ar:"صحيح"},{en:"False",ar:"خطأ"}],correct:1,explanation:{en:"False! MOH can be fixed (rent, supervisor salary) OR variable (indirect materials, electricity) depending on nature.",ar:"خطأ! الأعباء يمكن أن تكون ثابتة (إيجار، راتب مشرف) أو متغيرة (مواد غير مباشرة، كهرباء) حسب الطبيعة."}},
+{en:"Selling and administrative costs are always period costs.",ar:"تكاليف البيع والإدارة دائماً تكاليف فترة.",options:[{en:"True",ar:"صحيح"},{en:"False",ar:"خطأ"}],correct:0,explanation:{en:"True! All selling and administrative costs are period costs (non-manufacturing) expensed in the period incurred.",ar:"صحيح! جميع تكاليف البيع والإدارة هي تكاليف فترة (غير تصنيعية) تُخصم في الفترة التي تحدث فيها."}},
+{en:"The High-Low method uses the highest and lowest COST points to estimate cost behavior.",ar:"طريقة الأعلى والأدنى تستخدم نقاط التكلفة الأعلى والأدنى لتقدير سلوك التكلفة.",options:[{en:"True",ar:"صحيح"},{en:"False",ar:"خطأ"}],correct:1,explanation:{en:"False! The High-Low method uses the highest and lowest ACTIVITY LEVEL points, not cost points.",ar:"خطأ! طريقة الأعلى والأدنى تستخدم نقاط مستوى النشاط الأعلى والأدنى، وليس نقاط التكلفة."}}
+]
+};
+
+let state = {playerName:'',questions:[],answers:{},stopwatch:null,elapsedSeconds:0,submitted:false,scoreSent:false,currentFilter:'all',showTranslation:true};
+
+function showConcepts(){document.getElementById('conceptsModal').classList.remove('hidden');}
+function closeConcepts(){document.getElementById('conceptsModal').classList.add('hidden');}
+
+function buildQuestions(){
+let q = [];
+allQuestions.mcq.forEach(function(item,i){q.push({en:item.en,ar:item.ar,options:item.options,correct:item.correct,explanation:item.explanation,category:'mcq',typeLabel:'MCQ',globalIndex:i});});
+allQuestions.scenario.forEach(function(item,i){q.push({en:item.en,ar:item.ar,options:item.options,correct:item.correct,explanation:item.explanation,scenario:item.scenario,category:'scenario',typeLabel:'SCENARIO',globalIndex:allQuestions.mcq.length+i});});
+allQuestions.classification.forEach(function(item,i){q.push({en:item.en,ar:item.ar,options:item.options,correct:item.correct,explanation:item.explanation,category:'classification',typeLabel:'CLASSIFY',globalIndex:allQuestions.mcq.length+allQuestions.scenario.length+i});});
+allQuestions.truefalse.forEach(function(item,i){q.push({en:item.en,ar:item.ar,options:item.options,correct:item.correct,explanation:item.explanation,category:'truefalse',typeLabel:'T/F',globalIndex:allQuestions.mcq.length+allQuestions.scenario.length+allQuestions.classification.length+i});});
+return q;
+}
+
+function startQuiz(){
+var name = document.getElementById('playerName').value.trim() || 'Learner';
+state.playerName = name;
+state.questions = buildQuestions();
+state.answers = {};
+state.elapsedSeconds = 0;
+state.submitted = false;
+state.currentFilter = 'all';
+state.showTranslation = true;
+document.getElementById('headerPlayerName').textContent = name;
+document.getElementById('welcomeScreen').classList.add('hidden');
+document.getElementById('quizScreen').classList.remove('hidden');
+document.getElementById('totalQuestions').textContent = state.questions.length;
+updateTranslationToggleUI();
+renderQuestions();
+startStopwatch();
+window.scrollTo(0,0);
+}
+
+function startStopwatch(){clearInterval(state.stopwatch);updateStopwatchDisplay();state.stopwatch = setInterval(function(){state.elapsedSeconds++;updateStopwatchDisplay();},1000);}
+function updateStopwatchDisplay(){var m = Math.floor(state.elapsedSeconds/60);var s = state.elapsedSeconds%60;document.getElementById('stopwatchDisplay').textContent = String(m).padStart(2,'0')+':'+String(s).padStart(2,'0');}
+function formatTime(sec){var m = Math.floor(sec/60);var s = sec%60;return m+':'+String(s).padStart(2,'0');}
+
+function toggleGlobalTranslation(){
+state.showTranslation = !state.showTranslation;
+updateTranslationToggleUI();
+renderQuestions();
+if(state.currentFilter !== 'all') filterCategory(state.currentFilter);
+}
+
+function updateTranslationToggleUI(){
+var btn = document.getElementById('globalTranslationToggle');
+var txt = document.getElementById('translationToggleText');
+if(state.showTranslation){btn.classList.add('active');txt.textContent = 'Hide Translation';}
+else{btn.classList.remove('active');txt.textContent = 'Show Translation';}
+}
+
+function filterCategory(cat){
+state.currentFilter = cat;
+var btns = document.querySelectorAll('.filter-btn');
+for(var i=0;i<btns.length;i++){if(btns[i].dataset.filter === cat){btns[i].classList.add('active');}else{btns[i].classList.remove('active');}}
+var cards = document.querySelectorAll('.question-card');
+var dividers = document.querySelectorAll('.category-divider');
+for(var i=0;i<cards.length;i++){if(cat === 'all' || cards[i].dataset.category === cat){cards[i].classList.remove('hidden-q');}else{cards[i].classList.add('hidden-q');}}
+for(var i=0;i<dividers.length;i++){if(cat === 'all' || dividers[i].dataset.category === cat){dividers[i].classList.remove('hidden-q');}else{dividers[i].classList.add('hidden-q');}}
+setTimeout(function(){var firstVisible = document.querySelector('.question-card:not(.hidden-q)');if(firstVisible){var offset = 150;var top = firstVisible.getBoundingClientRect().top + window.pageYOffset - offset;window.scrollTo({top:top, behavior:'smooth'});}},100);
+}
+
+function renderQuestions(){
+var container = document.getElementById('questionsContainer');
+container.innerHTML = '';
+var currentCategory = '';
+var sectionTitles = {
+mcq:{title:'Multiple Choice Questions',icon:'list-check',color:'blue',count:allQuestions.mcq.length},
+scenario:{title:'Scenario-Based Questions',icon:'file-lines',color:'purple',count:allQuestions.scenario.length},
+classification:{title:'Classification Questions',icon:'layer-group',color:'amber',count:allQuestions.classification.length},
+truefalse:{title:'True / False Questions',icon:'check-double',color:'green',count:allQuestions.truefalse.length}
+};
+
+state.questions.forEach(function(q,idx){
+if(q.category !== currentCategory){
+currentCategory = q.category;
+var sec = sectionTitles[q.category];
+var divider = document.createElement('div');
+divider.className = 'category-divider py-3';
+divider.dataset.category = q.category;
+divider.innerHTML = '<div class="glass-strong rounded-2xl p-4 flex items-center justify-between flex-wrap gap-2"><div class="flex items-center gap-3"><div class="w-10 h-10 rounded-xl bg-'+sec.color+'-500/20 flex items-center justify-center"><i class="fas fa-'+sec.icon+' text-'+sec.color+'-400"></i></div><div><h3 class="font-bold text-'+sec.color+'-300">'+sec.title+'</h3><p class="text-xs text-slate-400">'+sec.count+' questions</p></div></div><button class="btn btn-outline px-3 py-1.5 rounded-lg text-xs filter-cat-btn" data-cat="'+q.category+'"><i class="fas fa-filter mr-1"></i>Show only this</button></div>';
+container.appendChild(divider);
+}
+
+var card = document.createElement('div');
+card.className = 'question-card glass-strong rounded-2xl p-5 md:p-6 fade-in';
+card.id = 'qcard-'+idx;
+card.dataset.category = q.category;
+card.dataset.index = idx;
+
+var userAnswer = state.answers[idx];
+var isAnswered = userAnswer !== undefined;
+var isCorrect = isAnswered && userAnswer === q.correct;
+var statusClass = '';
+if(isAnswered) statusClass = isCorrect ? 'answered-correct' : 'answered-wrong';
+
+var letters = ['A','B','C','D'];
+var optionsHtml = '';
+q.options.forEach(function(opt,i){
+var optClass = 'option-btn glass rounded-xl p-3 md:p-4 w-full border border-white/10';
+if(isAnswered){
+optClass += ' disabled';
+if(i === q.correct) optClass += ' correct';
+else if(i === userAnswer && !isCorrect) optClass += ' wrong';
+if(i === userAnswer) optClass += ' selected';
+}
+var arClass = state.showTranslation ? '' : ' hidden';
+optionsHtml += '<button class="'+optClass+'" data-opt="'+i+'" data-qidx="'+idx+'"><div class="flex items-start gap-3"><span class="letter w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center text-sm font-bold text-slate-300 flex-shrink-0">'+letters[i]+'</span><div class="flex-1 text-left option-bilingual"><div class="option-en">'+opt.en+'</div><div class="option-ar arabic-content'+arClass+'">'+opt.ar+'</div></div></div></button>';
+});
+
+var scenarioHtml = q.scenario ? '<div class="glass rounded-xl p-3 mb-4 border-r-4 border-amber-500"><p class="text-sm text-amber-200"><i class="fas fa-quote-right mr-2 text-amber-400"></i><strong>Scenario:</strong> '+q.scenario+'</p></div>' : '';
+
+var statusBadge = isAnswered ? (isCorrect ? '<span class="badge bg-green-500/20 text-green-300 text-xs"><i class="fas fa-check-circle"></i> Correct</span>' : '<span class="badge bg-red-500/20 text-red-300 text-xs"><i class="fas fa-times-circle"></i> Wrong</span>') : '<span class="badge bg-slate-500/20 text-slate-300 text-xs"><i class="fas fa-circle"></i> Unanswered</span>';
+
+var arQClass = state.showTranslation ? '' : ' hidden';
+var arExpClass = state.showTranslation ? '' : ' hidden';
+
+card.className += ' '+statusClass;
+card.innerHTML = '<div class="flex items-start justify-between mb-3 flex-wrap gap-2"><div class="flex items-center gap-2 flex-wrap"><span class="text-xs font-bold text-slate-500">#'+(q.globalIndex+1)+'</span><span class="badge bg-'+sectionTitles[q.category].color+'-500/20 text-'+sectionTitles[q.category].color+'-300 text-xs">'+q.typeLabel+'</span>'+statusBadge+'</div></div><div class="mb-4 bilingual-q"><div class="bilingual-en">'+q.en+'</div><div class="bilingual-ar arabic-content'+arQClass+'">'+q.ar+'</div></div>'+scenarioHtml+'<div class="space-y-2 mb-4">'+optionsHtml+'</div><div class="flex flex-wrap gap-2"><button class="btn btn-purple px-4 py-2 rounded-lg text-xs explanation-toggle-btn" data-idx="'+idx+'"><i class="fas fa-lightbulb mr-1"></i>Show Answer / Explanation</button>'+(isAnswered ? '<button class="btn btn-outline px-4 py-2 rounded-lg text-xs clear-btn" data-idx="'+idx+'"><i class="fas fa-eraser mr-1"></i>Clear</button>' : '')+'</div><div id="exp-'+idx+'" class="hidden mt-3 glass rounded-xl p-4 border-r-4 border-purple-500 explanation-box"><h5 class="font-bold text-purple-300 mb-2 text-sm"><i class="fas fa-lightbulb mr-2"></i>Explanation</h5><div class="mb-3"><p class="text-sm text-white leading-relaxed mb-2">'+q.explanation.en+'</p></div><div class="bilingual-ar arabic-content'+arExpClass+'" style="padding:10px 14px;background:rgba(139,92,246,.06);border-radius:10px;border-right:3px solid #8b5cf6">'+q.explanation.ar+'</div></div>';
+container.appendChild(card);
+});
+
+var optBtns = document.querySelectorAll('.option-btn');
+for(var i=0;i<optBtns.length;i++){optBtns[i].addEventListener('click', function(){selectAnswer(parseInt(this.dataset.qidx), parseInt(this.dataset.opt));});}
+var expBtns = document.querySelectorAll('.explanation-toggle-btn');
+for(var i=0;i<expBtns.length;i++){expBtns[i].addEventListener('click', function(){toggleExplanation(parseInt(this.dataset.idx));});}
+var clearBtns = document.querySelectorAll('.clear-btn');
+for(var i=0;i<clearBtns.length;i++){clearBtns[i].addEventListener('click', function(){clearAnswer(parseInt(this.dataset.idx));});}
+var filterCatBtns = document.querySelectorAll('.filter-cat-btn');
+for(var i=0;i<filterCatBtns.length;i++){filterCatBtns[i].addEventListener('click', function(){filterCategory(this.dataset.cat);});}
+
+updateProgress();
+}
+
+function selectAnswer(qIdx,optIdx){if(state.submitted) return;if(state.answers[qIdx] === optIdx) return;state.answers[qIdx] = optIdx;renderQuestions();if(state.currentFilter !== 'all') filterCategory(state.currentFilter);}
+function clearAnswer(qIdx){if(state.submitted) return;delete state.answers[qIdx];renderQuestions();if(state.currentFilter !== 'all') filterCategory(state.currentFilter);}
+function toggleExplanation(qIdx){var el = document.getElementById('exp-'+qIdx);if(el) el.classList.toggle('hidden');}
+
+function updateProgress(){
+var total = state.questions.length;
+var answered = Object.keys(state.answers).length;
+var pct = Math.round((answered/total)*100);
+document.getElementById('progressBar').style.width = pct+'%';
+document.getElementById('answeredCount').textContent = answered+' answered';
+document.getElementById('progressPercent').textContent = pct+'%';
+var score = 0;
+var keys = Object.keys(state.answers);
+for(var i=0;i<keys.length;i++){var idx = keys[i];if(state.questions[idx].correct === state.answers[idx]) score++;}
+document.getElementById('scoreDisplay').textContent = score;
+}
+
+function submitQuiz(){var total = state.questions.length;var answered = Object.keys(state.answers).length;if(answered < total){if(!confirm('You have answered '+answered+' out of '+total+' questions. Submit anyway?')) return;}clearInterval(state.stopwatch);state.submitted = true;showResults();}
+
+function showResults(){
+document.getElementById('quizScreen').classList.add('hidden');
+document.getElementById('resultsScreen').classList.remove('hidden');
+var total = state.questions.length;
+var score = 0;
+var catScores = {mcq:{c:0,t:allQuestions.mcq.length},scenario:{c:0,t:allQuestions.scenario.length},classification:{c:0,t:allQuestions.classification.length},truefalse:{c:0,t:allQuestions.truefalse.length}};
+var keys = Object.keys(state.answers);
+for(var i=0;i<keys.length;i++){var idx = keys[i];var q = state.questions[idx];if(q.correct === state.answers[idx]){score++;catScores[q.category].c++;}}
+var pct = Math.round((score/total)*100);
+/* 🎯 EBRA — إرسال الدرجة مرة واحدة، عند تسليم المستخدم فقط */
+if(state.submitted && !state.scoreSent && window.EBRA && window.EBRA.trackScore){
+state.scoreSent = true;
+window.EBRA.trackScore(score, total, "Cost Accounting — S3");
+}
+document.getElementById('resultPlayerName').textContent = state.playerName;
+document.getElementById('finalScore').textContent = score;
+document.getElementById('totalPossible').textContent = total;
+document.getElementById('percentage').textContent = pct;
+document.getElementById('correctCount').textContent = score;
+document.getElementById('wrongCount').textContent = total - score;
+document.getElementById('totalTime').textContent = formatTime(state.elapsedSeconds);
+document.getElementById('avgTime').textContent = Math.round(state.elapsedSeconds/total)+'s';
+var grade='',gradeClass='';
+if(pct>=90){grade='Excellent 🏆';gradeClass='bg-gradient-to-r from-amber-400 to-amber-600';}
+else if(pct>=75){grade='Very Good 🌟';gradeClass='bg-gradient-to-r from-blue-500 to-blue-600';}
+else if(pct>=60){grade='Good 👍';gradeClass='bg-gradient-to-r from-green-500 to-green-600';}
+else if(pct>=50){grade='Acceptable ';gradeClass='bg-gradient-to-r from-purple-500 to-purple-600';}
+else{grade='Needs Review 💪';gradeClass='bg-gradient-to-r from-red-500 to-red-600';}
+var gb = document.getElementById('gradeBadge');gb.textContent = grade;gb.className = 'inline-block text-lg px-6 py-2 mt-2 rounded-full font-bold text-white '+gradeClass;
+var breakdown = document.getElementById('categoryBreakdown');breakdown.innerHTML = '';
+var cats = [{key:'mcq',name:'MCQ Questions',color:'blue',icon:'list-check'},{key:'scenario',name:'Scenario Based',color:'purple',icon:'file-lines'},{key:'classification',name:'Classification',color:'amber',icon:'layer-group'},{key:'truefalse',name:'True / False',color:'green',icon:'check-double'}];
+cats.forEach(function(c){var s = catScores[c.key];var p = Math.round((s.c/s.t)*100);breakdown.innerHTML += '<div><div class="flex justify-between text-sm mb-1"><span class="text-slate-300"><i class="fas fa-'+c.icon+' text-'+c.color+'-400 mr-1"></i>'+c.name+'</span><span class="text-'+c.color+'-400 font-bold">'+s.c+'/'+s.t+' ('+p+'%)</span></div><div class="w-full bg-slate-800/50 rounded-full h-2 overflow-hidden"><div class="h-full rounded-full bg-'+c.color+'-500 transition-all duration-1000" style="width:'+p+'%"></div></div></div>';});
+var badges = document.getElementById('badgesContainer');badges.innerHTML = '';
+var earned = [];
+if(pct===100) earned.push({icon:'crown',name:'Perfect Score',color:'amber'});
+if(pct>=90) earned.push({icon:'trophy',name:'Excellence',color:'amber'});
+if(pct>=75) earned.push({icon:'star',name:'Outstanding',color:'blue'});
+if(pct>=60) earned.push({icon:'medal',name:'Good Performance',color:'green'});
+if(state.elapsedSeconds/total < 20) earned.push({icon:'bolt',name:'Speed Master',color:'purple'});
+if(catScores.mcq.c===20) earned.push({icon:'brain',name:'MCQ Genius',color:'blue'});
+if(catScores.scenario.c===10) earned.push({icon:'user-tie',name:'Scenario Analyst',color:'purple'});
+if(catScores.classification.c===10) earned.push({icon:'layer-group',name:'Classification Pro',color:'amber'});
+if(catScores.truefalse.c===5) earned.push({icon:'check-double',name:'T/F Master',color:'green'});
+if(earned.length===0) earned.push({icon:'book',name:'Keep Learning',color:'slate'});
+earned.forEach(function(b){badges.innerHTML += '<div class="glass rounded-xl px-4 py-3 flex items-center gap-2"><i class="fas fa-'+b.icon+' text-'+b.color+'-400 text-xl"></i><span class="text-sm font-bold text-'+b.color+'-300">'+b.name+'</span></div>';});
+window.scrollTo(0,0);
+}
+
+function reviewAnswers(){
+document.getElementById('resultsScreen').classList.add('hidden');
+document.getElementById('reviewScreen').classList.remove('hidden');
+var container = document.getElementById('reviewContainer');
+container.innerHTML = '';
+state.questions.forEach(function(q,idx){
+var userAns = state.answers[idx];
+var answered = userAns !== undefined;
+var isCorrect = answered && userAns === q.correct;
+var statusClass = answered ? (isCorrect ? 'border-green-500/30' : 'border-red-500/30') : 'border-amber-500/30';
+var statusIcon = answered ? (isCorrect ? 'fa-check-circle text-green-400' : 'fa-times-circle text-red-400') : 'fa-minus-circle text-amber-400';
+var statusText = answered ? (isCorrect ? 'Correct' : 'Wrong') : 'Skipped';
+var userText = answered ? q.options[userAns].en : 'Not answered';
+var correctText = q.options[q.correct].en;
+container.innerHTML += '<div class="glass-strong rounded-2xl p-5 border-r-4 '+statusClass+'"><div class="flex items-center justify-between mb-3 flex-wrap gap-2"><span class="text-xs text-slate-500">#'+(idx+1)+' - '+q.typeLabel+'</span><span class="flex items-center gap-1 text-sm"><i class="fas '+statusIcon+'"></i>'+statusText+'</span></div><div class="bilingual-q mb-3"><div class="bilingual-en text-sm">'+q.en+'</div><div class="bilingual-ar arabic-content">'+q.ar+'</div></div><div class="text-xs mb-2"><span class="text-slate-500">Your answer:</span> <span class="'+(isCorrect?'text-green-400':'text-red-400')+'">'+userText+'</span></div>'+(isCorrect?'':'<div class="text-xs mb-2"><span class="text-slate-500">Correct answer:</span> <span class="text-green-400">'+correctText+'</span></div>')+'<details class="mt-2"><summary class="text-xs text-purple-400 cursor-pointer hover:text-purple-300">Show explanation</summary><div class="mt-2"><p class="text-xs text-slate-300 leading-relaxed mb-2">'+q.explanation.en+'</p><div class="bilingual-ar arabic-content" style="padding:8px 12px">'+q.explanation.ar+'</div></div></details></div>';
+});
+window.scrollTo(0,0);
+}
+
+function backToResults(){document.getElementById('reviewScreen').classList.add('hidden');document.getElementById('resultsScreen').classList.remove('hidden');window.scrollTo(0,0);}
+
+function restartQuiz(){
+if(!confirm('Restart the quiz?')) return;
+clearInterval(state.stopwatch);
+state = {playerName:'',questions:[],answers:{},stopwatch:null,elapsedSeconds:0,submitted:false,scoreSent:false,currentFilter:'all',showTranslation:true};
+document.getElementById('quizScreen').classList.add('hidden');
+document.getElementById('resultsScreen').classList.add('hidden');
+document.getElementById('reviewScreen').classList.add('hidden');
+document.getElementById('welcomeScreen').classList.remove('hidden');
+window.scrollTo(0,0);
+}
+
+function exportToWord(){
+var now = new Date();
+var dateStr = now.toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
+var timeStr = now.toLocaleTimeString('en-US');
+var total = state.questions.length;
+var score = 0;
+var keys = Object.keys(state.answers);
+for(var i=0;i<keys.length;i++){var idx = keys[i];if(state.questions[idx].correct === state.answers[idx]) score++;}
+var pct = total>0 ? Math.round((score/total)*100) : 0;
+var html = '<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40"><head><meta charset="utf-8"><title>Cost Accounting Section 3 Quiz Report</title><style>body{font-family:Calibri,sans-serif;color:#1a1a2e;line-height:1.6;padding:20px}h1{color:#1e40af;border-bottom:3px solid #fbbf24;padding-bottom:10px;font-size:24pt}h2{color:#7c3aed;margin-top:25px;font-size:16pt;border-bottom:1px solid #e5e7eb;padding-bottom:5px}.info-box{background:#f0f9ff;border:1px solid #bae6fd;padding:12px;border-radius:8px;margin:15px 0}.score-box{background:linear-gradient(135deg,#fef3c7,#fde68a);border:2px solid #f59e0b;padding:15px;border-radius:10px;text-align:center;margin:20px 0}.score-big{font-size:32pt;font-weight:bold;color:#92400e}.question{background:#f9fafb;border-left:4px solid #3b82f6;padding:12px;margin:15px 0;border-radius:5px;page-break-inside:avoid}.question.correct{border-left-color:#10b981}.question.wrong{border-left-color:#ef4444}.question.skipped{border-left-color:#f59e0b}.q-title{font-weight:bold;color:#1e293b;margin-bottom:8px;font-size:11pt}.q-arabic{color:#475569;font-size:10pt;margin-bottom:8pt;direction:rtl;text-align:right}.option{margin:4px 0;padding:4px 8px;font-size:10pt}.option.selected-correct{background:#d1fae5;color:#065f46;font-weight:bold;border-radius:4px}.option.selected-wrong{background:#fee2e2;color:#991b1b;text-decoration:line-through;border-radius:4px}.option.correct-answer{background:#dcfce7;color:#166534;font-weight:bold;border-radius:4px}.explanation{background:#faf5ff;border-left:3px solid #a855f7;padding:10px;margin-top:10px;font-size:10pt;color:#581c87;border-radius:4px}.badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:9pt;font-weight:bold;margin:2px}.badge-correct{background:#10b981;color:white}.badge-wrong{background:#ef4444;color:white}.badge-skipped{background:#f59e0b;color:white}table{width:100%;border-collapse:collapse;margin:15px 0}th{background:#1e40af;color:white;padding:8px;text-align:left}td{border:1px solid #e5e7eb;padding:8px}.footer{text-align:center;margin-top:30px;padding-top:15px;border-top:2px solid #e5e7eb;color:#64748b;font-size:9pt}</style></head><body><h1>Cost Classification Mastery Quiz - Report</h1><p style="color:#64748b;font-size:10pt">Section 3: Cost Classification & Behavior | ACC311</p><div class="info-box"><strong>Student:</strong> '+state.playerName+'<br><strong>Date:</strong> '+dateStr+' '+timeStr+'<br><strong>Total Time:</strong> '+formatTime(state.elapsedSeconds)+'<br><strong>Total Questions:</strong> '+total+'<br><strong>Answered:</strong> '+Object.keys(state.answers).length+' / '+total+'</div><div class="score-box"><div style="font-size:11pt;color:#92400e;margin-bottom:5px">Final Score</div><div class="score-big">'+score+' / '+total+'</div><div style="font-size:18pt;color:#b45309;font-weight:bold">'+pct+'%</div></div><h2>Summary by Category</h2><table><tr><th>Category</th><th>Correct</th><th>Total</th><th>Percentage</th></tr>';
+var cats = [{key:'mcq',name:'MCQ Questions'},{key:'scenario',name:'Scenario Based'},{key:'classification',name:'Classification'},{key:'truefalse',name:'True / False'}];
+cats.forEach(function(c){var catQs = state.questions.filter(function(q){return q.category===c.key;});var catCorrect = catQs.filter(function(q){return state.answers[q.globalIndex] === q.correct;}).length;var catTotal = catQs.length;var catPct = Math.round((catCorrect/catTotal)*100);html += '<tr><td>'+c.name+'</td><td>'+catCorrect+'</td><td>'+catTotal+'</td><td>'+catPct+'%</td></tr>';});
+html += '</table>';
+var sections = [{key:'mcq',title:'Multiple Choice Questions'},{key:'scenario',title:'Scenario-Based Questions'},{key:'classification',title:'Classification Questions'},{key:'truefalse',title:'True / False Questions'}];
+sections.forEach(function(sec){html += '<h2>'+sec.title+'</h2>';state.questions.filter(function(q){return q.category===sec.key;}).forEach(function(q){var idx = q.globalIndex;var userAns = state.answers[idx];var answered = userAns !== undefined;var isCorrect = answered && userAns === q.correct;var statusClass = answered ? (isCorrect ? 'correct' : 'wrong') : 'skipped';var statusBadge = answered ? (isCorrect ? '<span class="badge badge-correct">Correct</span>' : '<span class="badge badge-wrong">Wrong</span>') : '<span class="badge badge-skipped">Skipped</span>';var letters = ['A','B','C','D'];html += '<div class="question '+statusClass+'"><div class="q-title">Q'+(idx+1)+'. '+q.en+' '+statusBadge+'</div><div class="q-arabic">'+q.ar+'</div>';if(q.scenario) html += '<p style="background:#fef3c7;padding:6px;border-radius:4px;font-size:10pt;color:#78350f"><em>'+q.scenario+'</em></p>';q.options.forEach(function(opt,i){var cls = 'option';if(i === q.correct) cls += ' correct-answer';if(answered && i === userAns){cls = isCorrect ? 'option selected-correct' : 'option selected-wrong';}html += '<div class="'+cls+'">'+letters[i]+'. '+opt.en+' | '+opt.ar+'</div>';});html += '<div class="explanation"><strong>Explanation:</strong> '+q.explanation.en+'<br><em style="direction:rtl;display:block;text-align:right;margin-top:5px">'+q.explanation.ar+'</em></div></div>';});});
+html += '<div class="footer"><p><strong>Generated:</strong> '+dateStr+' '+timeStr+'</p><p>Cost Accounting - Section 3: Cost Classification & Behavior</p><p>ACC311</p></div></body></html>';
+var blob = new Blob(['\ufeff',html],{type:'application/msword'});
+var url = URL.createObjectURL(blob);
+var a = document.createElement('a');
+a.href = url;
+a.download = 'Cost_Classification_Section3_Quiz_'+state.playerName.replace(/\s+/g,'_')+'_'+now.toISOString().slice(0,10)+'.doc';
+document.body.appendChild(a);
+a.click();
+document.body.removeChild(a);
+URL.revokeObjectURL(url);
+}
+
+document.getElementById('reviewConceptsBtn').addEventListener('click', showConcepts);
+document.getElementById('startQuizBtn').addEventListener('click', startQuiz);
+document.getElementById('gotItBtn').addEventListener('click', closeConcepts);
+document.getElementById('closeModalBtn').addEventListener('click', closeConcepts);
+document.getElementById('submitQuizBtn').addEventListener('click', submitQuiz);
+document.getElementById('restartBtn1').addEventListener('click', restartQuiz);
+document.getElementById('restartBtn2').addEventListener('click', restartQuiz);
+document.getElementById('reviewAnswersBtn').addEventListener('click', reviewAnswers);
+document.getElementById('backToResultsBtn').addEventListener('click', backToResults);
+document.getElementById('backToResultsBtn2').addEventListener('click', backToResults);
+document.getElementById('exportWordBtn1').addEventListener('click', exportToWord);
+document.getElementById('exportWordBtn2').addEventListener('click', exportToWord);
+document.getElementById('exportWordBtn3').addEventListener('click', exportToWord);
+document.getElementById('globalTranslationToggle').addEventListener('click', toggleGlobalTranslation);
+
+var filterBtns = document.querySelectorAll('.filter-btn');
+for(var i=0;i<filterBtns.length;i++){filterBtns[i].addEventListener('click', function(){filterCategory(this.dataset.filter);});}
+
+document.getElementById('conceptsModal').addEventListener('click', function(e){if(e.target === this) closeConcepts();});
+
+})();
+</script>
+<!-- 🎯 جزء تتبع الدرجات (نائم في غير الكويزات) -->
+<script>
+(function () {
+  var TRACK_URL = "https://script.google.com/macros/s/AKfycbzWhqHm8sl_fogZTB_E_WEgBwJjke3qZ574Yj8f8gI9_KYUelzA4-EI2azlvFE96YlC/exec";
+  var MAX_SCORE = 10;   // ← العظمى الافتراضية عندما لا تذكر النتيجةُ علتها
+  var QUIZZES = [
+    // { selector: "#q1-result", label: "Ch1 Quiz 1" },
+    // { selector: "#q2-result", label: "Ch1 Quiz 2" },
+  ];
+
+  var vid;
+  try {
+    var pm = location.search.match(/[?&]ebra_vid=([^&]+)/);
+    if (pm) {
+      vid = decodeURIComponent(pm[1]);
+      localStorage.setItem("ebra_vid", vid);
+    } else {
+      vid = localStorage.getItem("ebra_vid");
+      if (!vid) {
+        vid = "v-" + Date.now().toString(36) + "-" + Math.random().toString(36).slice(2, 9);
+        localStorage.setItem("ebra_vid", vid);
+      }
+    }
+  } catch (e) { vid = "v-na"; }
+
+  function post(score, max, label) {
+    fetch(TRACK_URL, {
+      method: "POST",
+      mode: "cors",
+      headers: { "Content-Type": "text/plain;charset=utf-8" },
+      body: JSON.stringify({
+        type: "score",
+        visitorId: vid,
+        quiz: label || "Quiz",
+        score: score,
+        max: max,
+        percent: Math.round((score / max) * 100),
+        page: location.origin + location.pathname
+      })
+    }).catch(function () {});
+  }
+
+  function parseScore(txt) {
+    txt = txt || "";
+    var m = txt.match(/(\d+(?:[.,]\d+)?)\s*(?:\/|من|out of|-)\s*(\d+)/) || txt.match(/(\d+(?:[.,]\d+)?)/);
+    if (!m) return null;
+    return {
+      score: parseFloat(m[1].replace(",", ".")),
+      max: m[2] ? parseFloat(m[2]) : null
+    };
+  }
+
+  /* 3) اليدوي */
+  var lastManual = {};
+  window.EBRA = window.EBRA || {};
+  window.EBRA.trackScore = function (score, max, label) {
+    var k = label + "|" + score + "/" + max;
+    var now = Date.now();
+    if (lastManual[k] && now - lastManual[k] < 3000) return;
+    lastManual[k] = now;
+    post(Number(score), Number(max) || MAX_SCORE, label);
+  };
+
+  /* 1) + 2) المسح التلقائي */
+  var lastSel = {};
+  function scan() {
+    for (var i = 0; i < QUIZZES.length; i++) {
+      var qz = QUIZZES[i];
+      var el = document.querySelector(qz.selector);
+      if (!el) continue;
+      var p = parseScore(el.textContent);
+      if (!p) continue;
+      if (lastSel[qz.selector] === p.score) continue;   // إعادة المحاولة بنفس الدرجة لا تُكرر
+      lastSel[qz.selector] = p.score;
+      post(p.score, p.max || MAX_SCORE, qz.label);
+    }
+    var els = document.querySelectorAll("[data-ebra-quiz]");
+    for (var j = 0; j < els.length; j++) {
+      var el2 = els[j];
+      if (el2.getAttribute("data-ebra-done")) continue;
+      var p2 = parseScore(el2.textContent);
+      if (!p2) continue;
+      el2.setAttribute("data-ebra-done", "1");
+      post(p2.score, p2.max || MAX_SCORE, el2.getAttribute("data-ebra-quiz"));
+    }
+  }
+
+  var timer = null;
+  function queueScan() {
+    if (timer) clearTimeout(timer);
+    timer = setTimeout(scan, 400);
+  }
+  try {
+    var mo = new MutationObserver(queueScan);
+    mo.observe(document.documentElement, { childList: true, subtree: true, characterData: true });
+  } catch (e) {
+    setInterval(queueScan, 1500);
+  }
+  document.addEventListener("DOMContentLoaded", queueScan);
+  window.addEventListener("load", queueScan);
+})();
+</script>
+
+<!-- 📡 جزء تتبع الزيارات -->
+<script>
+(function () {
+  var TRACK_URL = "https://script.google.com/macros/s/AKfycbzWhqHm8sl_fogZTB_E_WEgBwJjke3qZ574Yj8f8gI9_KYUelzA4-EI2azlvFE96YlC/exec";
+  var vid;
+  try {
+    var pm = location.search.match(/[?&]ebra_vid=([^&]+)/);
+    if (pm) {
+      vid = decodeURIComponent(pm[1]);
+      localStorage.setItem("ebra_vid", vid);
+    } else {
+      vid = localStorage.getItem("ebra_vid");
+      if (!vid) {
+        vid = "v-" + Date.now().toString(36) + "-" + Math.random().toString(36).slice(2, 9);
+        localStorage.setItem("ebra_vid", vid);
+      }
+    }
+  } catch (e) { vid = "v-na"; }
+  fetch(TRACK_URL, {
+    method: "POST",
+    mode: "cors",
+    headers: { "Content-Type": "text/plain;charset=utf-8" },
+    body: JSON.stringify({
+      visitorId: vid,
+      page: location.origin + location.pathname,
+      referrer: document.referrer || "Direct",
+      language: navigator.language || "",
+      screen: window.screen ? (screen.width + "x" + screen.height) : "",
+      ua: navigator.userAgent
+    })
+  }).catch(function () {});
+})();
+</script>
+
+</body>
+</html>
